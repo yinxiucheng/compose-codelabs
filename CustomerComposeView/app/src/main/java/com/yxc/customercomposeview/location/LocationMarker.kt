@@ -1,6 +1,8 @@
 package com.yxc.customercomposeview.location
 import  android.graphics.Path
 import android.graphics.RectF
+import com.yxc.customercomposeview.common.HPoint
+import com.yxc.customercomposeview.common.VPoint
 
 class LocationMarker {
     private var mPath: Path

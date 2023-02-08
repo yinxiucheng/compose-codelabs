@@ -1,4 +1,4 @@
-package com.yxc.customercomposeview.location
+package com.yxc.customercomposeview.common
 
 import android.graphics.PointF
 
