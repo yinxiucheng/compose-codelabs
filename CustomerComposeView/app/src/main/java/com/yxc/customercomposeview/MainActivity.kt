@@ -6,15 +6,15 @@ import androidx.activity.compose.setContent
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.yxc.customercomposeview.location.LocationMarkerLayout
 import com.yxc.customercomposeview.ui.theme.CustomerComposeViewTheme
+import com.yxc.customercomposeview.waterdrop.WaterDrop
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             CustomerComposeViewTheme {
-                LocationMarkerLayout()
+                WaterDrop()
             }
         }
     }
@@ -29,6 +29,6 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     CustomerComposeViewTheme {
-        LocationMarkerLayout()
+        WaterDrop()
     }
 }

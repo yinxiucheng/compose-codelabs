@@ -7,6 +7,9 @@ import android.animation.ObjectAnimator
 import android.view.animation.LinearInterpolator
 import android.animation.AnimatorListenerAdapter
 import android.content.Context
+import android.os.Handler
+import android.os.Looper
+import android.os.Message
 import android.util.AttributeSet
 import com.yxc.customercomposeview.R
 import com.yxc.customercomposeview.common.dip2px
@@ -25,6 +28,7 @@ class WaterDrop : FrameLayout {
     private lateinit var water6: BezierCircle
     private lateinit var water7: BezierCircle
     private lateinit var water8: BezierCircle
+
     private lateinit var waterScan1: BezierCircle
     private lateinit var waterScan2: BezierCircle
     private lateinit var waterScan3: BezierCircle
@@ -33,28 +37,29 @@ class WaterDrop : FrameLayout {
     private lateinit var waterScan6: BezierCircle
     private lateinit var waterScan7: BezierCircle
     private lateinit var waterScan8: BezierCircle
+
     private lateinit var mAnimatorLevelSet: AnimatorSet
     private lateinit var mAnimatorScanSet: AnimatorSet
     var radius: Int = dip2px(24f)
     var mContext: Context
 
-//    private val handler: Handler = object : Handler() {
-//        override fun handleMessage(msg: Message) {
-//            when (msg.what) {
-//                0 -> {
-//                    // 移除所有的msg.what为0等消息，保证只有一个循环消息队列再跑
-//                    this.removeMessages(0)
-//                    mAnimatorScanSet.start()
-//                    // app的功能逻辑处理
-//                    // 再次发出msg，循环更新
-//                    sendEmptyMessageDelayed(0, 2000)
-//                }
-//                1 ->                     // 直接移除，定时器停止
-//                    this.removeMessages(0)
-//                else -> {}
-//            }
-//        }
-//    }
+    private val mHandler: Handler = object : Handler(Looper.getMainLooper()) {
+        override fun handleMessage(msg: Message) {
+            when (msg.what) {
+                0 -> {
+                    // 移除所有的msg.what为0等消息，保证只有一个循环消息队列再跑
+                    this.removeMessages(0)
+                    mAnimatorScanSet.start()
+                    // app的功能逻辑处理
+                    // 再次发出msg，循环更新
+                    sendEmptyMessageDelayed(0, 2000)
+                }
+                1 ->                     // 直接移除，定时器停止
+                    this.removeMessages(0)
+                else -> {}
+            }
+        }
+    }
 
     constructor(context: Context) : super(context) {
         mContext = context
@@ -218,7 +223,7 @@ class WaterDrop : FrameLayout {
         mAnimatorLevelSet.addListener(object : AnimatorListenerAdapter() {
             override fun onAnimationEnd(animation: Animator) {
                 super.onAnimationEnd(animation)
-                handler.sendEmptyMessage(1)
+                mHandler.sendEmptyMessage(1)
             }
         })
     }
