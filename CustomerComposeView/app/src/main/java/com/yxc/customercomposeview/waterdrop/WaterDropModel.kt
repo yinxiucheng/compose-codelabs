@@ -1,6 +1,11 @@
 package com.yxc.customercomposeview.waterdrop
 
 import android.graphics.Path
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.AnimationVector1D
+import androidx.compose.ui.graphics.AndroidPath
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.drawscope.DrawScope
 import com.yxc.customercomposeview.R
 import com.yxc.customercomposeview.common.dip2pxF
 
@@ -42,6 +47,32 @@ class WaterDropModel {
         water8Path = water8.getPath()
     }
 
+    fun drawScan(drawScope: DrawScope, colorArray: Array<Color>, alphaArray: Array<Animatable<Float, AnimationVector1D>>){
+        drawScope.apply {
+            drawPath(AndroidPath(water8Path), color = colorArray[7], alpha = alphaArray[6].value)
+            drawPath(AndroidPath(water7Path), color = colorArray[6], alpha = alphaArray[5].value)
+            drawPath(AndroidPath(water6Path), color = colorArray[5], alpha = alphaArray[4].value)
+            drawPath(AndroidPath(water5Path), color = colorArray[4], alpha = alphaArray[3].value)
+            drawPath(AndroidPath(water4Path), color = colorArray[3], alpha = alphaArray[2].value)
+            drawPath(AndroidPath(water3Path), color = colorArray[2], alpha = alphaArray[1].value)
+            drawPath(AndroidPath(water2Path), color = colorArray[1], alpha = alphaArray[0].value)
+            drawPath(AndroidPath(water1Path), color = colorArray[0])
+        }
+    }
+
+    fun drawWaterDrop(drawScope: DrawScope, colorArray: Array<Color>, alphaArray: Array<Animatable<Float, AnimationVector1D>>){
+        drawScope.apply {
+            drawPath(AndroidPath(water8Path), color = colorArray[7], alpha = alphaArray[7].value)
+            drawPath(AndroidPath(water7Path), color = colorArray[6], alpha = alphaArray[6].value)
+            drawPath(AndroidPath(water6Path), color = colorArray[5], alpha = alphaArray[5].value)
+            drawPath(AndroidPath(water5Path), color = colorArray[4], alpha = alphaArray[4].value)
+            drawPath(AndroidPath(water4Path), color = colorArray[3], alpha = alphaArray[3].value)
+            drawPath(AndroidPath(water3Path), color = colorArray[2], alpha = alphaArray[2].value)
+            drawPath(AndroidPath(water2Path), color = colorArray[1], alpha = alphaArray[1].value)
+            drawPath(AndroidPath(water1Path), color = colorArray[0], alpha = alphaArray[0].value)
+        }
+    }
+
     companion object {
         private val radius = dip2pxF(24f)
         val waterDropMBg = WaterDropModel(
@@ -70,7 +101,18 @@ class WaterDropModel {
             )
         )
 
-
+        val waterDropMScan = WaterDropModel(
+            radius, arrayOf(
+                R.color.water_drop1,
+                R.color.water_drop2,
+                R.color.water_drop3,
+                R.color.water_drop4,
+                R.color.water_drop5,
+                R.color.water_drop6,
+                R.color.water_drop7,
+                R.color.water_drop8,
+            )
+        )
     }
 
 

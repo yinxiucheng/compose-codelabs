@@ -76,13 +76,7 @@ class RainbowView : View {
     private fun drawThreeCircleBg(canvas: Canvas) {
         drawCircleInner(canvas, RainbowConstant.TARGET_FIRST_TYPE, 180f, spaceWidth, true)
         drawCircleInner(canvas, RainbowConstant.TARGET_SECOND_TYPE, 180f, spaceWidth, true)
-        drawCircleInner(
-            canvas,
-            RainbowConstant.TARGET_THIRD_TYPE,
-            180f,
-            spaceWidth / 2.0f,
-            true
-        )
+        drawCircleInner(canvas, RainbowConstant.TARGET_THIRD_TYPE, 180f, spaceWidth / 2.0f, true)
     }
 
     private fun checkFractionIsSmall(fraction: Float, type: Int): Boolean {
