@@ -16,7 +16,7 @@ fun dip2pxF(dpValue: Float):Float {
 fun getResourcesColor(context: Context, color: Int): Int {
     var ret = 0x00ffffff
     try {
-        ret = context.resources.getColor(color, null)
+        ret = context.resources.getColor(color)
     } catch (e: Exception) {
 
     }
