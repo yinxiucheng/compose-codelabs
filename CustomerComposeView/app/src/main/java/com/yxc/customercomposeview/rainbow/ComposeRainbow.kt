@@ -68,15 +68,15 @@ fun drawRainbowInner(modifier:Modifier) {
     val animator3 = remember{ Animatable(0f, Float.VectorConverter) }
 
     LaunchedEffect(Unit){
-        animator1.animateTo(targetValue = 0.5f, animationSpec = tween(durationMillis = 1000, delayMillis = 1000, easing = FastOutSlowInEasing))
+        animator1.animateTo(targetValue = 0.5f, animationSpec = tween(durationMillis = 1000, delayMillis = 600, easing = FastOutSlowInEasing))
     }
 
     LaunchedEffect(Unit){
-        animator2.animateTo(targetValue = 0.7f, animationSpec = tween(durationMillis = 1000, delayMillis = 1000, easing = FastOutSlowInEasing))
+        animator2.animateTo(targetValue = 0.7f, animationSpec = tween(durationMillis = 1000, delayMillis = 600, easing = FastOutSlowInEasing))
     }
 
     LaunchedEffect(Unit){
-        animator3.animateTo(targetValue = 0.8f, animationSpec = tween(durationMillis = 1000, delayMillis = 1000, easing = FastOutSlowInEasing))
+        animator3.animateTo(targetValue = 0.8f, animationSpec = tween(durationMillis = 1000, delayMillis = 600, easing = FastOutSlowInEasing))
     }
 
     drawCircle(
