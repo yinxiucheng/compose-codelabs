@@ -1,13 +1,13 @@
 package com.yxc.customercomposeview.rainbow
 
-import android.graphics.Canvas
-import android.graphics.Paint
 import android.graphics.Path
 import android.graphics.RectF
+import androidx.compose.ui.graphics.AndroidPath
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.drawscope.DrawScope
 
 class RainbowModel private constructor(
-    isBG: Boolean, rectF: RectF, itemWidth: Float, spaceWidth: Float,
-    wrapperFixAngel: Float, innerFixAngel: Float,
+    isBG: Boolean, rectF: RectF, itemWidth: Float, spaceWidth: Float,type: Int,
     sweepAngel: Float
 ) {
     var reSize: Float
@@ -20,6 +20,9 @@ class RainbowModel private constructor(
     var sweepAngel: Float
     var wrapperFixAngel: Float
     var innerFixAngel: Float
+    var colorResource: Int = -1
+    var type:Int = RainbowConstant.TARGET_FIRST_TYPE
+
     private lateinit var centerCircle: Path
     private lateinit var wrapperCircle: Path
     private lateinit var innerCircle: Path
@@ -33,18 +36,28 @@ class RainbowModel private constructor(
     private lateinit var innerEndRectF: RectF
 
     init {
-        reSize = if (isBG) RainbowConstant.RESIZE_BG.toFloat() else RainbowConstant.RESIZE.toFloat()
+        reSize = if (isBG) 0f else RainbowConstant.RESIZE
         this.rectF = rectF
         width = rectF.width()
         height = rectF.height()
         this.itemWidth = itemWidth
         this.spaceWidth = spaceWidth
-        this.wrapperFixAngel = wrapperFixAngel
-        this.innerFixAngel = innerFixAngel
+        this.type = type
         this.sweepAngel = sweepAngel
+        this.colorResource = getColorResource(type)
+        if (type == RainbowConstant.TARGET_FIRST_TYPE) {
+            wrapperFixAngel = RainbowConstant.FIRST_WRAPPER_FIX_ANGLE
+            innerFixAngel = RainbowConstant.FIRST_INNER_FIX_ANGLE
+        } else if (type == RainbowConstant.TARGET_SECOND_TYPE) {
+            wrapperFixAngel = RainbowConstant.SECOND_WRAPPER_FIX_ANGLE
+            innerFixAngel = RainbowConstant.SECOND_INNER_FIX_ANGLE
+        } else {
+            wrapperFixAngel = RainbowConstant.THIRD_WRAPPER_FIX_ANGLE
+            innerFixAngel = RainbowConstant.THIRD_INNER_FIX_ANGLE
+        }
     }
 
-    private fun createComponents() {
+    fun createComponents() {
         createWrapperCircle()
         createCenterCircle()
         createInnerCircle()
@@ -52,15 +65,17 @@ class RainbowModel private constructor(
         createInnerPath()
     }
 
-    fun drawComponents(canvas: Canvas, paint: Paint) {
-        createComponents()
-        canvas.drawPath(wrapperCircle, paint)
-        canvas.drawPath(centerCircle, paint)
-        canvas.drawPath(innerCircle, paint)
-        canvas.drawPath(wrapperStartPath, paint)
-        canvas.drawPath(wrapperEndPath, paint)
-        canvas.drawPath(innerStartPath, paint)
-        canvas.drawPath(innerEndPath, paint)
+    fun drawComponents(drawScope: DrawScope, color:Color, isBG: Boolean) {
+        val alpha = if (isBG) 0.4f else 1.0f
+        drawScope.apply {
+            drawPath(AndroidPath(wrapperCircle), color, alpha)
+            drawPath(AndroidPath(centerCircle), color, alpha)
+            drawPath(AndroidPath(innerCircle), color, alpha)
+            drawPath(AndroidPath(wrapperStartPath), color, alpha)
+            drawPath(AndroidPath(wrapperEndPath), color, alpha)
+            drawPath(AndroidPath(innerStartPath), color, alpha)
+            drawPath(AndroidPath(innerEndPath), color, alpha)
+        }
     }
 
     private fun createWrapperCircle() {
@@ -103,7 +118,7 @@ class RainbowModel private constructor(
         innerEndRectF = RectF(itemWidth, itemWidth, width - itemWidth, height - itemWidth)
         val innerStartAngel = 180 + innerFixAngel
         innerCircle = createCircle(
-            innerStartRectF!!, innerEndRectF!!, innerStartAngel - 0.3f,
+            innerStartRectF, innerEndRectF, innerStartAngel - 0.3f,
             sweepAngel - 2 * innerFixAngel + 0.6f, width / 2, height / 2
         )
     }
@@ -177,25 +192,12 @@ class RainbowModel private constructor(
             spaceWidth: Float,
             sweepAngel: Float
         ): RainbowModel {
-            val wrapperFixAngel: Float
-            val innerFixAngel: Float
-            if (type == RainbowConstant.TARGET_FIRST_TYPE) {
-                wrapperFixAngel = RainbowConstant.FIRST_WRAPPER_FIX_ANGLE
-                innerFixAngel = RainbowConstant.FIRST_INNER_FIX_ANGLE
-            } else if (type == RainbowConstant.TARGET_SECOND_TYPE) {
-                wrapperFixAngel = RainbowConstant.SECOND_WRAPPER_FIX_ANGLE
-                innerFixAngel = RainbowConstant.SECOND_INNER_FIX_ANGLE
-            } else {
-                wrapperFixAngel = RainbowConstant.THIRD_WRAPPER_FIX_ANGLE
-                innerFixAngel = RainbowConstant.THIRD_INNER_FIX_ANGLE
-            }
             return RainbowModel(
                 isBg,
                 rectF,
                 itemWidth,
                 spaceWidth,
-                wrapperFixAngel,
-                innerFixAngel,
+                type,
                 sweepAngel
             )
         }

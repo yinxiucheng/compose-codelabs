@@ -1,5 +1,6 @@
 package com.yxc.customercomposeview.waterdrop
 
+import android.content.res.Resources
 import android.graphics.Path
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.AnimationVector1D
@@ -74,7 +75,7 @@ class WaterDropModel {
     }
 
     companion object {
-        private val radius = dip2pxF(24f)
+        private val radius = dip2pxF(24)
         val waterDropMBg = WaterDropModel(
             radius, arrayOf(
                 R.color.water_n_drop1,
@@ -113,7 +114,14 @@ class WaterDropModel {
                 R.color.water_drop8,
             )
         )
+
+        fun dip2pxF(dpValue: Int):Float {
+            val scale = Resources.getSystem().displayMetrics.density
+            return (dpValue * scale + 0.5f).toFloat()
+        }
     }
+
+
 
 
 }

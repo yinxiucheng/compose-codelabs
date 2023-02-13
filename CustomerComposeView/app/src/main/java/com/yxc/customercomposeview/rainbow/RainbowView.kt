@@ -34,15 +34,19 @@ class RainbowView : View {
     private var firstPercent = 0f
     private var secondPercent = 0f
     private var thirdPercent = 0f
+
     private var firstColor = -1
     private var secondColor = -1
     private var thirdColor = -1
+
     private var firstColors = IntArray(2)
     private var secondColors = IntArray(2)
     private var thirdColors = IntArray(2)
+
     private var firstBgColors = IntArray(2)
     private var secondBgColors = IntArray(2)
     private var thirdBgColors = IntArray(2)
+
     var itemWidth = 0f
     var spaceWidth = 0f
     private fun init() {
@@ -132,7 +136,7 @@ class RainbowView : View {
             sweepGradient = SweepGradient((viewWidth shr 1).toFloat(), (viewWidth shr 1).toFloat(), colors, position)
         }
         circlePaint.shader = sweepGradient
-        targetModel.drawComponents(canvas, circlePaint)
+//        targetModel.drawComponents(canvas, circlePaint)
         canvas.restore()
     }
 

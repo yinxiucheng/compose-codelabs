@@ -1,15 +1,14 @@
 package com.yxc.customercomposeview.rainbow
 
-import android.content.res.Resources
+import com.yxc.customercomposeview.common.dip2pxF
 
 
 object RainbowConstant {
 
-    val RESIZE_BG: Int = dip2px(0.14285712688)
+    val RESIZE_BG: Float = dip2pxF(0.14)
+    val RESIZE: Float = dip2pxF(0.1428571269)
 
-    val RESIZE: Int = dip2px(0.1428571269)
-
-    const val TRANSPARENT_VALUE = (255 * 0.2).toInt()
+    const val TRANSPARENT_VALUE = (255 * 0.2)
 
     const val FIRST_WRAPPER_FIX_ANGLE = 2.05f
 
@@ -35,8 +34,8 @@ object RainbowConstant {
 
     const val THIRD_FOUND_ANGLE_FRACTION = 0.10f
 
-    private fun dip2px(dpValue: Double): Int {
-        val scale = Resources.getSystem().displayMetrics.density
-        return (dpValue * scale + 0.5f).toInt()
-    }
+//    private fun dip2px(dpValue: Double): Int {
+//        val scale = Resources.getSystem().displayMetrics.density
+//        return (dpValue * scale + 0.5f).toInt()
+//    }
 }

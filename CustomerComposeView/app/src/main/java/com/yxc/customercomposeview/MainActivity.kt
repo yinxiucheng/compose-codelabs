@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import com.yxc.customercomposeview.rainbow.drawRainbow
 import com.yxc.customercomposeview.ui.theme.CustomerComposeViewTheme
 import com.yxc.customercomposeview.waterdrop.WaterDrop
 
@@ -14,7 +15,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             CustomerComposeViewTheme {
-                WaterDrop()
+                drawRainbow()
             }
         }
     }
@@ -29,6 +30,6 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     CustomerComposeViewTheme {
-        WaterDrop()
+        drawRainbow()
     }
 }

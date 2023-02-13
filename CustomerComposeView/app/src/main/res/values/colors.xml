@@ -28,6 +28,10 @@
     <color name="water_drop7">#ab083d</color>
     <color name="water_drop8">#8c052f</color>
 
+    <color name="rainbow_color1">#f95c38</color>
+    <color name="rainbow_color2">#FFB426</color>
+    <color name="rainbow_color3">#53B9FF</color>
+
     <color name="water_n_drop1">#3f4658</color>
     <color name="water_n_drop2">#363b4d</color>
     <color name="water_n_drop3">#303343</color>

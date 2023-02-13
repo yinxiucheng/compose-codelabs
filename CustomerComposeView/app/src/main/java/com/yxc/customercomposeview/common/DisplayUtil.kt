@@ -8,9 +8,9 @@ fun dip2px(dpValue: Float): Int {
     return (dpValue * scale + 0.5f).toInt()
 }
 
-fun dip2pxF(dpValue: Float):Float {
+fun dip2pxF(dpValue: Double):Float {
     val scale = Resources.getSystem().displayMetrics.density
-    return (dpValue * scale + 0.5f)
+    return (dpValue * scale + 0.5f).toFloat()
 }
 
 fun getResourcesColor(context: Context, color: Int): Int {
