@@ -62,21 +62,19 @@ fun drawRainbowInner(modifier:Modifier) {
         isBg = true,
         modifier
     )
-
     val animator1 = remember{ Animatable(0f, Float.VectorConverter) }
     val animator2 = remember{ Animatable(0f, Float.VectorConverter) }
     val animator3 = remember{ Animatable(0f, Float.VectorConverter) }
 
+    val tweenSpec = tween<Float>(durationMillis = 1000, delayMillis = 600, easing = FastOutSlowInEasing)
     LaunchedEffect(Unit){
-        animator1.animateTo(targetValue = 0.5f, animationSpec = tween(durationMillis = 1000, delayMillis = 600, easing = FastOutSlowInEasing))
+        animator1.animateTo(targetValue = 0.5f, animationSpec = tweenSpec)
     }
-
     LaunchedEffect(Unit){
-        animator2.animateTo(targetValue = 0.7f, animationSpec = tween(durationMillis = 1000, delayMillis = 600, easing = FastOutSlowInEasing))
+        animator2.animateTo(targetValue = 0.7f, animationSpec = tweenSpec)
     }
-
     LaunchedEffect(Unit){
-        animator3.animateTo(targetValue = 0.8f, animationSpec = tween(durationMillis = 1000, delayMillis = 600, easing = FastOutSlowInEasing))
+        animator3.animateTo(targetValue = 0.8f, animationSpec = tweenSpec)
     }
 
     drawCircle(
@@ -113,7 +111,7 @@ fun drawCircle(type: Int,
         val rectF = createTargetRectF(type, itemWidth, spaceWidth, contentWidth, contentHeight)
         val space = if (type == RainbowConstant.TARGET_THIRD_TYPE) spaceWidth/2.0f else spaceWidth
         val sweepAngel = fraction * 180
-        val targetModel: RainbowModel = createTargetModel(isBg, type, rectF, itemWidth, space, sweepAngel)
+        val targetModel = createTargetModel(isBg, type, rectF, itemWidth, space, sweepAngel)
         println("drawRainbow width:${rectF.width()}, height${rectF.height()}")
         if (checkFractionIsSmall(fraction, type)) {
             val roundRectF = createRoundRectF(type, itemWidth, spaceWidth, contentHeight)
