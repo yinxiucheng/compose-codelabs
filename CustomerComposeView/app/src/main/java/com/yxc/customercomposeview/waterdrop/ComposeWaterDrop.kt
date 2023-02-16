@@ -11,7 +11,21 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.withTransform
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
+import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
+
+
+@Preview
+@Composable
+fun WaterDrop(){
+    Box(modifier = Modifier.fillMaxSize()){
+        drawWaterDropBg()
+        drawWaterDrop()
+        for (num in 1 .. 7){
+            drawWaterDropScan(delayTime = num * 2000)
+        }
+    }
+}
 
 @Composable
 fun drawWaterDropBg(){
@@ -68,28 +82,14 @@ fun drawWaterDrop(){
     val animAlpha8 = remember { Animatable(0f, Float.VectorConverter) }
     
     LaunchedEffect(Unit){
-        animAlpha1.animateTo(1f, animationSpec = myKeyframs(0))
-    }
-    LaunchedEffect(Unit){
-        animAlpha2.animateTo(1f, animationSpec = myKeyframs(1))
-    }
-    LaunchedEffect(Unit){
-        animAlpha3.animateTo(1f, animationSpec = myKeyframs(2))
-    }
-    LaunchedEffect(Unit){
-        animAlpha4.animateTo(1f, animationSpec = myKeyframs(3))
-    }
-    LaunchedEffect(Unit){
-        animAlpha5.animateTo(1f, animationSpec = myKeyframs(4))
-    }
-    LaunchedEffect(Unit){
-        animAlpha6.animateTo(1f, animationSpec = myKeyframs(5))
-    }
-    LaunchedEffect(Unit){
-        animAlpha7.animateTo(1f, animationSpec = myKeyframs(6))
-    }
-    LaunchedEffect(Unit){
-        animAlpha8.animateTo(1f, animationSpec = myKeyframs(7))
+        async { animAlpha1.animateTo(1f, animationSpec = myKeyframs(0)) }
+        async { animAlpha2.animateTo(1f, animationSpec = myKeyframs(1)) }
+        async { animAlpha3.animateTo(1f, animationSpec = myKeyframs(2)) }
+        async { animAlpha4.animateTo(1f, animationSpec = myKeyframs(3)) }
+        async { animAlpha5.animateTo(1f, animationSpec = myKeyframs(4)) }
+        async { animAlpha6.animateTo(1f, animationSpec = myKeyframs(5)) }
+        async { animAlpha7.animateTo(1f, animationSpec = myKeyframs(6)) }
+        async { animAlpha8.animateTo(1f, animationSpec = myKeyframs(7)) }
     }
 
     val colorArray:Array<Color> = arrayOf(
@@ -127,11 +127,11 @@ private fun myKeyframs2(durationMillisParams:Int, delayMillisParams:Int, frames:
 }
 
 @Composable
-fun drawWaterDropScan(delayTime:Long){
+fun drawWaterDropScan(delayTime:Int){
     val waterDropModel by remember {
         mutableStateOf(WaterDropModel.waterDropMScan)
     }
-
+    val delayCurrent by rememberUpdatedState(newValue = delayTime)
     val animAlpha2 = remember { Animatable(0f, Float.VectorConverter) }
     val animAlpha3 = remember { Animatable(0f, Float.VectorConverter) }
     val animAlpha4 = remember { Animatable(0f, Float.VectorConverter) }
@@ -141,46 +141,36 @@ fun drawWaterDropScan(delayTime:Long){
     val animAlpha8 = remember { Animatable(0f, Float.VectorConverter) }
 
     LaunchedEffect(Unit){
-        delay(delayTime)
-        val map = mutableMapOf<Float, Int>().apply { put(1f, 350) }
-        animAlpha2.animateTo(0f, animationSpec = myKeyframs2(700, 0, map))
+        async {
+            animAlpha2.animateTo(0f, animationSpec = myKeyframs2(700,  0 + delayCurrent,
+                mutableMapOf<Float, Int>().apply { put(1f, 350) }))
+        }
+        async{
+            animAlpha3.animateTo(0f, animationSpec = myKeyframs2(630, 233 + delayCurrent,
+                mutableMapOf<Float, Int>().apply { put(0.8f, 315) }))
+        }
+        async{
+            animAlpha4.animateTo(0f, animationSpec = myKeyframs2(630, 383 + delayCurrent,
+                mutableMapOf<Float, Int>().apply { put(0.55f, 315) }))
+        }
+        async {
+            animAlpha5.animateTo(0f, animationSpec = myKeyframs2(650, 533 + delayCurrent,
+                mutableMapOf<Float, Int>().apply { put(0.5f, 325) }))
+        }
+        async {
+            animAlpha6.animateTo(0f, animationSpec = myKeyframs2(650, 667 + delayCurrent,
+                mutableMapOf<Float, Int>().apply { put(0.45f, 325) }))
+        }
+        async {
+            animAlpha7.animateTo(0f, animationSpec = myKeyframs2(567, 816 + delayCurrent,
+                mutableMapOf<Float, Int>().apply { put(0.35f, 283) }))
+        }
+        async {
+            animAlpha8.animateTo(0f, animationSpec = myKeyframs2(433, 983 + delayCurrent,
+                mutableMapOf<Float, Int>().apply { put(0.3f, 216) }))
+        }
     }
 
-    LaunchedEffect(Unit){
-        delay(delayTime)
-        val map = mutableMapOf<Float, Int>().apply { put(0.8f, 315) }
-        animAlpha3.animateTo(0f, animationSpec = myKeyframs2(630, 233, map))
-    }
-
-    LaunchedEffect(Unit){
-        delay(delayTime)
-        val map = mutableMapOf<Float, Int>().apply { put(0.55f, 315) }
-        animAlpha4.animateTo(0f, animationSpec = myKeyframs2(630, 383, map))
-    }
-
-    LaunchedEffect(Unit){
-        delay(delayTime)
-        val map = mutableMapOf<Float, Int>().apply { put(0.5f, 325) }
-        animAlpha5.animateTo(0f, animationSpec = myKeyframs2(650, 533, map))
-    }
-
-    LaunchedEffect(Unit){
-        delay(delayTime)
-        val map = mutableMapOf<Float, Int>().apply { put(0.45f, 325) }
-        animAlpha6.animateTo(0f, animationSpec = myKeyframs2(650, 667, map))
-    }
-
-    LaunchedEffect(Unit){
-        delay(delayTime)
-        val map = mutableMapOf<Float, Int>().apply { put(0.35f, 283) }
-        animAlpha7.animateTo(0f, animationSpec = myKeyframs2(567, 816, map))
-    }
-
-    LaunchedEffect(Unit){
-        delay(delayTime)
-        val map = mutableMapOf<Float, Int>().apply { put(0.3f, 216) }
-        animAlpha8.animateTo(0f, animationSpec = myKeyframs2(433, 983, map))
-    }
 
     val colorArray:Array<Color> = arrayOf(
         colorResource(id = waterDropModel.water1.colorResource),
@@ -206,14 +196,3 @@ fun drawWaterDropScan(delayTime:Long){
     }
 }
 
-@Preview
-@Composable
-fun WaterDrop(){
-    Box(modifier = Modifier.fillMaxSize()){
-        drawWaterDropBg()
-        drawWaterDrop()
-        for (num in 1 .. 7){
-            drawWaterDropScan(delayTime = num * 2000L)
-        }
-    }
-}
