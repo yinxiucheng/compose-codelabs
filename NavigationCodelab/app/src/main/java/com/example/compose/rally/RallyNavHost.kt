@@ -6,6 +6,7 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.navDeepLink
 import com.example.compose.rally.ui.accounts.AccountsScreen
 import com.example.compose.rally.ui.accounts.SingleAccountScreen
 import com.example.compose.rally.ui.bills.BillsScreen
@@ -44,7 +45,8 @@ fun RallyNavHost(navController:NavHostController, modifier:Modifier){
         }
         composable(
             route = SingleAccount.routeWithArgs,
-            arguments =  SingleAccount.arguments
+            arguments =  SingleAccount.arguments,
+            deepLinks = SingleAccount.deepLinks
         ) {navBackStackEntry->
             val accountType = navBackStackEntry.arguments?.getString(SingleAccount.accountTypeArg)
             SingleAccountScreen(accountType)
