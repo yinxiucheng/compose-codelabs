@@ -32,8 +32,12 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.compose.rally.ui.accounts.AccountsScreen
+import com.example.compose.rally.ui.bills.BillsScreen
 import com.example.compose.rally.ui.components.RallyTabRow
+import com.example.compose.rally.ui.overview.OverviewScreen
 import com.example.compose.rally.ui.theme.RallyTheme
 
 /**
@@ -52,8 +56,12 @@ class RallyActivity : ComponentActivity() {
 @Composable
 fun RallyApp() {
     RallyTheme {
-        var currentScreen: RallyDestination by remember { mutableStateOf(Overview) }
+//        var currentScreen: RallyDestination by remember { mutableStateOf(Overview) }
         val navController = rememberNavController()
+        val currentBackStack by navController.currentBackStackEntryAsState()
+        val currentDestination = currentBackStack?.destination
+        val currentScreen = rallyTabRowScreens.find { it.route == currentDestination?.route }?:Overview
+
         Scaffold(
             topBar = {
                 RallyTabRow(
@@ -71,13 +79,13 @@ fun RallyApp() {
             ) {
                 //NaGraphBuilder, 导航图
                 composable(route = Overview.route){
-                    Overview.screen()
+                    OverviewScreen()
                 }
                 composable(route = Accounts.route) {
-                    Accounts.screen()
+                    AccountsScreen()
                 }
                 composable(route = Bills.route) {
-                    Bills.screen()
+                    BillsScreen()
                 }
                 // builder parameter will be defined here as the graph
             }
