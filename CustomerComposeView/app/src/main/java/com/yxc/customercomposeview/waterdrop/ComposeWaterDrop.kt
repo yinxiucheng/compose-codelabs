@@ -11,8 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.withTransform
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
-import kotlinx.coroutines.async
-import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 @Preview
@@ -82,14 +81,14 @@ fun drawWaterDrop(){
     val animAlpha8 = remember { Animatable(0f, Float.VectorConverter) }
     
     LaunchedEffect(Unit){
-        async { animAlpha1.animateTo(1f, animationSpec = myKeyframs(0)) }
-        async { animAlpha2.animateTo(1f, animationSpec = myKeyframs(1)) }
-        async { animAlpha3.animateTo(1f, animationSpec = myKeyframs(2)) }
-        async { animAlpha4.animateTo(1f, animationSpec = myKeyframs(3)) }
-        async { animAlpha5.animateTo(1f, animationSpec = myKeyframs(4)) }
-        async { animAlpha6.animateTo(1f, animationSpec = myKeyframs(5)) }
-        async { animAlpha7.animateTo(1f, animationSpec = myKeyframs(6)) }
-        async { animAlpha8.animateTo(1f, animationSpec = myKeyframs(7)) }
+        launch { animAlpha1.animateTo(1f, animationSpec = myKeyframs(0)) }
+        launch { animAlpha2.animateTo(1f, animationSpec = myKeyframs(1)) }
+        launch { animAlpha3.animateTo(1f, animationSpec = myKeyframs(2)) }
+        launch { animAlpha4.animateTo(1f, animationSpec = myKeyframs(3)) }
+        launch { animAlpha5.animateTo(1f, animationSpec = myKeyframs(4)) }
+        launch { animAlpha6.animateTo(1f, animationSpec = myKeyframs(5)) }
+        launch { animAlpha7.animateTo(1f, animationSpec = myKeyframs(6)) }
+        launch { animAlpha8.animateTo(1f, animationSpec = myKeyframs(7)) }
     }
 
     val colorArray:Array<Color> = arrayOf(
@@ -141,31 +140,31 @@ fun drawWaterDropScan(delayTime:Int){
     val animAlpha8 = remember { Animatable(0f, Float.VectorConverter) }
 
     LaunchedEffect(Unit){
-        async {
+        launch {
             animAlpha2.animateTo(0f, animationSpec = myKeyframs2(700,  0 + delayCurrent,
                 mutableMapOf<Float, Int>().apply { put(1f, 350) }))
         }
-        async{
+        launch{
             animAlpha3.animateTo(0f, animationSpec = myKeyframs2(630, 233 + delayCurrent,
                 mutableMapOf<Float, Int>().apply { put(0.8f, 315) }))
         }
-        async{
+        launch{
             animAlpha4.animateTo(0f, animationSpec = myKeyframs2(630, 383 + delayCurrent,
                 mutableMapOf<Float, Int>().apply { put(0.55f, 315) }))
         }
-        async {
+        launch {
             animAlpha5.animateTo(0f, animationSpec = myKeyframs2(650, 533 + delayCurrent,
                 mutableMapOf<Float, Int>().apply { put(0.5f, 325) }))
         }
-        async {
+        launch {
             animAlpha6.animateTo(0f, animationSpec = myKeyframs2(650, 667 + delayCurrent,
                 mutableMapOf<Float, Int>().apply { put(0.45f, 325) }))
         }
-        async {
+        launch {
             animAlpha7.animateTo(0f, animationSpec = myKeyframs2(567, 816 + delayCurrent,
                 mutableMapOf<Float, Int>().apply { put(0.35f, 283) }))
         }
-        async {
+        launch {
             animAlpha8.animateTo(0f, animationSpec = myKeyframs2(433, 983 + delayCurrent,
                 mutableMapOf<Float, Int>().apply { put(0.3f, 216) }))
         }

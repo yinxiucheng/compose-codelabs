@@ -19,7 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.yxc.customercomposeview.R
 import com.yxc.customercomposeview.rainbow.RainbowModel.Companion.createTargetModel
-import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 
 @Preview
 @Composable
@@ -68,9 +68,9 @@ fun drawRainbowInner(modifier:Modifier) {
     val animator3 = remember{ Animatable(0f, Float.VectorConverter) }
     val tweenSpec = tween<Float>(durationMillis = 1000, delayMillis = 600, easing = FastOutSlowInEasing)
     LaunchedEffect(Unit){
-        async { animator1.animateTo(targetValue = 0.5f, animationSpec = tweenSpec) }
-        async { animator2.animateTo(targetValue = 0.7f, animationSpec = tweenSpec) }
-        async { animator3.animateTo(targetValue = 0.8f, animationSpec = tweenSpec) }
+        launch { animator1.animateTo(targetValue = 0.5f, animationSpec = tweenSpec) }
+        launch { animator2.animateTo(targetValue = 0.7f, animationSpec = tweenSpec) }
+        launch { animator3.animateTo(targetValue = 0.8f, animationSpec = tweenSpec) }
     }
 
     drawCircle(

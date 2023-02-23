@@ -55,18 +55,6 @@ fun DrawRectCircle(componentSize: Dp = 300.dp){
     }
 }
 
-@Composable
-fun DrawPathTest(){
-    val path = Path()
-    path.moveTo(100f, 300f)
-    path.lineTo(100f, 700f)
-    path.quadraticBezierTo(800f, 700f, 600f, 100f)
-    path.cubicTo(700f, 200f, 800f, 400f, 100f, 100f)
-    path.close()
-    Canvas(modifier = Modifier.size(360.dp)){
-        drawPath(path, color=Color.Blue, style = Stroke(width = 10f))
-    }
-}
 
 @Composable
 fun DrawLocationMarker(wrapperColor:Int = R.color.location_wrapper){
