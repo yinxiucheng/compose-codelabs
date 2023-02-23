@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dataTitleBar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp">
+
+    <ImageView
+        android:id="@+id/img_back_white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="@dimen/size_10"
+        android:scaleType="center"
+        android:src="@drawable/ic_left_back_black"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/txt_date_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="56dp"
+        android:gravity="center"
+        android:textColor="@color/text_color"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/txt_date_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_date_title"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="3dp"
+        android:drawableEnd="@drawable/ic_base_right_arrow_icon"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:textColor="@color/black"
+        android:textSize="@dimen/dimen_14sp" />
+
+    <ImageView
+        android:id="@+id/img_click_more"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/size_10"
+        android:layout_marginEnd="@dimen/size_23"
+        android:scaleType="center"
+        android:visibility="gone"
+        android:src="@drawable/icon_more"/>
+
+    <ImageView
+        android:id="@+id/img_calendar_expand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/size_10"
+        android:layout_marginEnd="23dp"
+        android:layout_toStartOf="@id/img_click_more"
+        android:scaleType="center"
+        android:visibility="gone"
+        android:src="@drawable/data_calendar_expand"/>
+
+    <com.yxc.customercomposeview.calander.view.ExpandLinearLayout
+        android:id="@+id/ll_calendar_expand"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/txt_date_desc"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/size_10">
+
+        <com.yxc.customercomposeview.calander.view.StatusTextView
+            android:id="@+id/img_current"
+            style="@style/StatusTextViewStyleCalendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:layout_marginTop="1.5dp"
+            app:status_txt="@string/health_current"
+            app:status_textView_style="unSelected"
+            app:status_select_img="@drawable/data_current_select"
+            app:status_unSelect_img="@drawable/data_current_unselect"/>
+
+        <com.yxc.customercomposeview.calander.view.StatusTableLayout
+            android:id="@+id/st_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <com.yxc.customercomposeview.calander.view.StatusTextView
+                android:id="@+id/img_day"
+                style="@style/StatusTextViewStyleCalendar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:status_txt="@string/health_data_title_calendar_day"
+                app:status_textView_style="selected"
+                app:status_select_img="@drawable/data_title_bar_day"
+                app:status_unSelect_img="@drawable/data_title_bar_day_unselect"/>
+
+            <com.yxc.customercomposeview.calander.view.StatusTextView
+                android:id="@+id/img_week"
+                style="@style/StatusTextViewStyleCalendar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:status_txt="@string/health_data_title_calendar_week"
+                app:status_textView_style="unSelected"
+                app:status_select_img="@drawable/data_title_bar_week"
+                app:status_unSelect_img="@drawable/data_title_bar_week_unselect"/>
+
+            <com.yxc.customercomposeview.calander.view.StatusTextView
+                android:id="@+id/img_month"
+                style="@style/StatusTextViewStyleCalendar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:status_txt="@string/health_data_title_calendar_month"
+                app:status_textView_style="unSelected"
+                app:status_select_img="@drawable/data_title_bar_month"
+                app:status_unSelect_img="@drawable/data_title_bar_month_unselect"/>
+
+        </com.yxc.customercomposeview.calander.view.StatusTableLayout>
+
+    </com.yxc.customercomposeview.calander.view.ExpandLinearLayout>
+
+</RelativeLayout>
+

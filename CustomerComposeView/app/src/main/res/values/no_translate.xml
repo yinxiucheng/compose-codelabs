@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+	<string name="date_day_suffix1" translatable="false">st</string>
+	<string name="date_day_suffix2" translatable="false">nd</string>
+	<string name="date_day_suffix3" translatable="false">rd</string>
+	<string name="date_day_suffix_other" translatable="false">th</string>
+</resources>

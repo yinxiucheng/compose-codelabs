@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txt_month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/text_color"
+        android:focusable="true"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <com.yxc.customercomposeview.calander.view.DayThreeCircleFiveLineCalendarView
+        android:id="@+id/monthCalendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_10"
+        android:layout_marginEnd="@dimen/size_10"
+        app:hollowCircleColor="#0099FF"
+        app:hollowCircleStroke="1.5dp"
+        app:isShowOtherMonthDate="false"
+        app:selectCircleColor="@color/text_color"
+        app:selectCircleRadius="20dp"
+        app:solarSelectTextColor="#FE6528"
+        app:solarTextColor="@color/text_color"
+        app:solarTextSize="@dimen/dimen_14sp"
+        app:todayBgColor="@color/health_calendar_today_bg"
+        app:todaySolarSelectTextColor="#FE6528"
+        app:todaySolarTextColor="@color/text_color"
+        app:todayWeekBgColor="@color/common_transparent" />
+
+</LinearLayout>
+

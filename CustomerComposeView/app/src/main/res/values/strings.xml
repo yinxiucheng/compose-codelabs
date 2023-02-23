@@ -1,3 +1,84 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">CustomerComposeView</string>
+
+    <string name="common_time_join_str1">%1$s %2$s %3$s</string>
+    <string name="common_time_join_str">%1$s\u0020%2$s</string>
+    <plurals name="unit_hour_desc">
+        <item quantity="one"><xliff:g id="time hour unit">%1$d</xliff:g>\u0020hr</item>
+        <item quantity="other"><xliff:g id="time hour unit">%1$d</xliff:g>\u0020hrs</item>
+    </plurals>
+    <plurals name="unit_min_desc">
+        <item quantity="one"><xliff:g id="time minute unit">%1$d</xliff:g>\u0020min</item>
+        <item quantity="other"><xliff:g id="time minute unit">%1$d</xliff:g>\u0020mins</item>
+    </plurals>
+    <plurals name="unit_hour_desc2">
+        <item quantity="one"><xliff:g id="time hour unit">%1$d</xliff:g> hr</item>
+        <item quantity="other"><xliff:g id="time hour unit">%1$d</xliff:g> hrs</item>
+    </plurals>
+    <plurals name="unit_min_desc2">
+        <item quantity="one"><xliff:g id="time minute unit">%1$d</xliff:g> min</item>
+        <item quantity="other"><xliff:g id="time minute unit">%1$d</xliff:g> mins</item>
+    </plurals>
+    <plurals name="unit_min_desc2_with_space">
+        <item quantity="one"><xliff:g id="time minute unit">%1$d</xliff:g> min</item>
+        <item quantity="other"><xliff:g id="time minute unit">%1$d</xliff:g> mins</item>
+    </plurals>
+    <plurals name="unit_min_desc3">
+        <item quantity="one"><xliff:g id="time minute unit">%1$d</xliff:g> min</item>
+        <item quantity="other"><xliff:g id="time minute unit">%1$d</xliff:g> mins</item>
+    </plurals>
+    <plurals name="unit_seconds_desc">
+        <item quantity="one"><xliff:g id="time seconds unit">%1$d</xliff:g> sec</item>
+        <item quantity="other"><xliff:g id="time seconds unit">%1$d</xliff:g> secs</item>
+    </plurals>
+    <plurals name="unit_seconds_short_desc">
+        <item quantity="one"><xliff:g id="time seconds unit">%1$d</xliff:g> sec</item>
+        <item quantity="other"><xliff:g id="time seconds unit">%1$d</xliff:g> secs</item>
+    </plurals>
+    <plurals name="unit_point_desc">
+        <item quantity="one"><xliff:g id="score value">%1$d</xliff:g></item>
+        <item quantity="other"><xliff:g id="score value">%1$d</xliff:g></item>
+    </plurals>
+
+    <plurals name="day_in_simplify">
+        <item quantity="one"><xliff:g id="Alarm in 1d5h3m. should be translate to %1$d d"> %1$d d</xliff:g></item>
+        <item quantity="other"><xliff:g id="Alarm in 1d5h3m. should be translate to %1$d d"> %1$d d</xliff:g></item>
+    </plurals>
+    <plurals name="hour_in_simplify">
+        <item quantity="one"><xliff:g id="Alarm in 1d5h3m. should be translate to %1$d h">%1$d t</xliff:g></item>
+        <item quantity="other"><xliff:g id="Alarm in 1d5h3m. should be translate to %1$d h">%1$d t</xliff:g></item>
+    </plurals>
+    <plurals name="min_in_simplify">
+        <item quantity="one"><xliff:g id="Alarm in 1d5h3m. should be translate to %1$d m">%1$d m</xliff:g></item>
+        <item quantity="other"><xliff:g id="Alarm in 1d5h3m. should be translate to %1$d m">%1$d m</xliff:g></item>
+    </plurals>
+    <plurals name="min_in_simplify_2">
+        <item quantity="one"><xliff:g id="Alarm in 3 min. should be translate to %1$d min">%1$d min.</xliff:g></item>
+        <item quantity="other"><xliff:g id="Alarm in 3 min. should be translate to %1$d min">%1$d min.</xliff:g></item>
+    </plurals>
+    <string name="common_join_str">%1$s\u0020%2$s</string>
+    <string name="time_update_just_now">Juuri nyt</string>
+    <string name="time_update_time_before"><xliff:g exmpale="2小时3分钟前" id="time string">%1$s</xliff:g> sitten</string>
+    <plurals name="time_update_days_before">
+        <item quantity="one"><xliff:g id="days" exmpale="tow days ago">%1$d</xliff:g> päivä sitten</item>
+        <item quantity="other"><xliff:g id="days" exmpale="tow days ago">%1$d</xliff:g> päivää sitten</item>
+    </plurals>
+    <string name="time_period_early_morning">AM</string>
+    <string name="time_period_morning">AM</string>
+    <string name="time_period_noon">PM</string>
+    <string name="time_period_afternoon">PM</string>
+    <string name="time_period_night">PM</string>
+    <string name="common_am">AM</string>
+    <string name="common_pm">PM</string>
+    <string name="date_pattern_mm_dd_simple">dd.MM</string>
+    <string name="date_pattern_mm_dd_hh_mm">dd/MM HH:mm</string>
+    <string name="date_pattern_mm_dd_week_simple">EEE, dd MMM</string>
+    <string name="date_pattern_yyyy_mm_dd_hh_mm">dd.MM.yyyy HH:mm</string>
+    <string name="date_pattern_yyyy_mm_dd">dd.MM.yyyy</string>
+    <string name="date_pattern_yyyy_m_d">dd.MM.yyyy</string>
+    <string name="health_current">今日</string>
+    <string name="health_data_title_calendar_day">日</string>
+    <string name="health_data_title_calendar_month">月</string>
+    <string name="health_data_title_calendar_week">週</string>
+    
 </resources>

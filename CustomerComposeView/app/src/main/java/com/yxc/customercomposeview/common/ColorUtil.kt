@@ -1,26 +1,29 @@
-package com.yxc.customercomposeview.common;
+package com.yxc.customercomposeview.common
 
-import android.content.Context;
+import android.content.Context
+import com.yxc.customercomposeview.utils.AppUtil.app
 
 /**
  * @author yxc
  * @date 2019/3/1
  */
-public class ColorUtil {
-
+object ColorUtil {
     /**
      * 获取资源中的颜色
      * @param color
      * @return
      */
-    public static int getResourcesColor(Context context, int color) {
-
-        int ret = 0x00ffffff;
+    fun getResourcesColor(context: Context, color: Int): Int {
+        var ret = 0x00ffffff
         try {
-            ret = context.getResources().getColor(color);
-        } catch (Exception e) {
+            ret = context.resources.getColor(color)
+        } catch (e: Exception) {
         }
+        return ret
+    }
 
-        return ret;
+    @JvmStatic
+    fun getResourcesColor(color: Int): Int {
+        return getResourcesColor(app, color)
     }
 }

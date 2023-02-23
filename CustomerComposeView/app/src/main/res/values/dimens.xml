@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="top_bar_height">53.33dp</dimen>
+    <dimen name="top_bar_text_size">20sp</dimen>
+    <dimen name="top_bar_sub_text_size">16sp</dimen>
+    <dimen name="top_bar_ege_margin">23.3dp</dimen>
+    <dimen name="top_bar_icon_size">33.33dp</dimen>
+
+    <dimen name="common_divider_height">0.33dp</dimen>
+    <dimen name="home_appbar_height">100dp</dimen>
+
+    <!--  与MIUI标题对齐的间距  -->
+    <dimen name="spacing_aligned_with_title">26dp</dimen>
+
+    <dimen name="margin_27dp">27dp</dimen>
+
+    <dimen name="dialog_text_size_40">40sp</dimen>
+    <dimen name="dialog_text_size_30">30sp</dimen>
+    <dimen name="dialog_text_size_25">25sp</dimen>
+    <dimen name="dialog_text_size_20">20sp</dimen>
+    <dimen name="dialog_text_size_16">16sp</dimen>
+    <dimen name="dialog_text_size_15">15sp</dimen>
+    <dimen name="dialog_text_size_14">14sp</dimen>
+    <dimen name="dialog_text_size_12">12sp</dimen>
+    <dimen name="size_12">13.08dp</dimen>
+    <dimen name="size_8">8.72dp</dimen>
+
+    <!--dialog -->
+    <dimen name="divider_height">0.33dp</dimen>
+    <dimen name="progress_height">40dp</dimen>
+    <dimen name="progress_margin">27dip</dimen>
+    <dimen name="font_21_33">21.33sp</dimen>
+    <dimen name="font_20">20sp</dimen>
+    <dimen name="font_22">22sp</dimen>
+    <dimen name="font_9_33">9.33sp</dimen>
+    <dimen name="font_10">10sp</dimen>
+    <dimen name="font_11">11sp</dimen>
+    <dimen name="size_4_7">4.7dp</dimen>
+    <dimen name="font_13_36">13.36sp</dimen>
+    <dimen name="size_4">4dp</dimen>
+    <dimen name="size_162">162dp</dimen>
+    <dimen name="size_16_7">16.7dp</dimen>
+    <dimen name="size_21_3">21.3dp</dimen>
+    <dimen name="common_title_left_margin">26dp</dimen>
+    <dimen name="dimen_miui_titlebar_size">29.3sp</dimen>
+    <dimen name="common_dialog_size_23_3">25.40dp</dimen>
+    <dimen name="font_16_7">16.7sp</dimen>
+    <dimen name="font_12_7">12.7sp</dimen>
+    <dimen name="size_174">174dp</dimen>
+    <dimen name="size_26_67">26.67dp</dimen>
+    <dimen name="font_12">12sp</dimen>
+    <dimen name="font_8">8sp</dimen>
+    <dimen name="size_11_3">11.3dp</dimen>
+    <dimen name="size_1_3">1.3dp</dimen>
+    <dimen name="margin_1dp">1dp</dimen>
+    <dimen name="size_53_3">53.3dp</dimen>
+    <dimen name="font_15_3">15.3sp</dimen>
+    <dimen name="size_23">23dp</dimen>
+    <dimen name="size_10">10.9dp</dimen>
+    <dimen name="dimen_14sp">14sp</dimen>
+    <dimen name="detail_item_padding">15dp</dimen>
+</resources>

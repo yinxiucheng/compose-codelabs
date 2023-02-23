@@ -41,4 +41,64 @@
     <color name="water_n_drop7">#15151e</color>
     <color name="water_n_drop8">#050508</color>
 
+    <color name="solarTextColor">#000000</color>
+    <color name="lunarTextColor">#F0EBEB</color>
+    <color name="solarTermTextColor">#B2B2B2</color>
+    <color name="lunarHolidayTextColor">#B2B2B2</color>
+    <color name="solarHolidayTextColor">#B2B2B2</color>
+    <color name="selectCircleColor">#39AF81</color>
+    <color name="todaySolarTextColor">#39AF81</color>
+    <color name="holidayColor">#39AF81</color>
+    <color name="workdayColor">#EC7230</color>
+    <color name="pointColor">#B2B2B2</color>
+    <color name="hollowCircleColor">#B2B2B2</color>
+    <color name="disabledColor">#999999</color>
+    <color name="todayWeekBgColor">#D6D6D6</color>
+    <color name="cpb_unclick_color">#B2B2B2</color>
+    <!--calendar start-->
+    <color name="calendar_today_selector">@color/white_80</color>
+    <color name="health_calendar_today_bg">#FFB3B5</color>
+    <color name="share_pg_color">@color/black</color>
+
+
+    <color name="white_90">#E6FFFFFF</color>
+    <color name="white_80">#CCFFFFFF</color>
+    <color name="white_70">#B3FFFFFF</color>
+    <color name="white_60">#99FFFFFF</color>
+    <color name="white_50">#80FFFFFF</color>
+    <color name="white_45">#73FFFFFF</color>
+    <color name="white_40">#66FFFFFF</color>
+    <color name="white_30">#4DFFFFFF</color>
+    <color name="white_20">#33FFFFFF</color>
+    <color name="white_10">#1AFFFFFF</color>
+    <color name="white_75">#C0FFFFFF</color>
+    <color name="white_25">#40FFFFFF</color>
+    <color name="white_15">#26FFFFFF</color>
+    <color name="white_12">#1EFFFFFF</color>
+    <color name="white_8">#14FFFFFF</color>
+    <color name="white_4">#0AFFFFFF</color>
+
+    <color name="black_90">#E6000000</color>
+    <color name="black_80">#CC000000</color>
+    <color name="black_70">#B3000000</color>
+    <color name="black_60">#99000000</color>
+    <color name="black_50">#80000000</color>
+    <color name="black_45">#73000000</color>
+    <color name="black_40">#66000000</color>
+    <color name="black_30">#4D000000</color>
+    <color name="black_20">#33000000</color>
+    <color name="black_15">#27000000</color>
+    <color name="black_10">#1A000000</color>
+    <color name="black_07">#12000000</color>
+    <color name="black_6">#10000000</color>
+    <color name="black_5">#0D000000</color>
+    <color name="black_4">#0A000000</color>
+    <color name="black_3">#07000000</color>
+    <color name="black_2">#05000000</color>
+
+    <color name="common_transparent">#00FFFFFF</color>
+    <color name="text_color">@color/black</color>
+    <color name="text_color_60">@color/black_60</color>
+    <color name="green">#49be39</color>
+
 </resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txt_month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#E85559"
+        android:layout_marginStart="20dp"
+        android:focusable="true"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <com.yxc.customercomposeview.calander.view.WeekCalendarView
+        android:id="@+id/monthCalendar"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:hollowCircleColor="@color/black_60"
+        app:solarTextSize="14sp"
+        app:todaySolarSelectTextColor="#FF585D"
+        app:todaySolarTextColor="#FF585D"
+        app:solarTextColor="@color/text_color"
+        app:solarSelectTextColor="@color/text_color"
+        app:todayWeekBgColor="@color/health_calendar_today_bg"
+        app:hollowCircleStroke="1dp"
+        app:selectCircleRadius="20dp"
+        app:selectCircleColor="@color/text_color"
+        app:isShowOtherMonthDate="false" />
+
+</LinearLayout>
+

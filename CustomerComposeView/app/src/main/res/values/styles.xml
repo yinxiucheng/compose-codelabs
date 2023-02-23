@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="StatusTextViewStyleCalendar">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="status_select_textColor">@color/text_color</item>
+        <item name="status_unSelect_textColor">@color/text_color_60</item>
+    </style>
+</resources>
