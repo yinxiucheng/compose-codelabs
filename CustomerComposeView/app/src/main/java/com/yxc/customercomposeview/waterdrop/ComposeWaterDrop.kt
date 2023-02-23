@@ -14,17 +14,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import kotlinx.coroutines.launch
 
 
-@Preview
-@Composable
-fun WaterDrop(){
-    Box(modifier = Modifier.fillMaxSize()){
-        drawWaterDropBg()
-        drawWaterDrop()
-        for (num in 1 .. 7){
-            drawWaterDropScan(delayTime = num * 2000)
-        }
-    }
-}
+
+
 
 @Composable
 fun drawWaterDropBg(){

@@ -21,11 +21,6 @@ import com.yxc.customercomposeview.R
 import com.yxc.customercomposeview.rainbow.RainbowModel.Companion.createTargetModel
 import kotlinx.coroutines.launch
 
-@Preview
-@Composable
-fun Rainbow(){
-    drawRainbow()
-}
 
 @Composable
 fun drawRainbow(){
